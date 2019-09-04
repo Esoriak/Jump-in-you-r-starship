@@ -7,14 +7,10 @@ import CardStarships from '../Screen/CardStarships';
 class GridStarships extends Component {
   state = {
     Vehicles: [],
-    Cost: [],
-    InfosLoc: '',
-
   }
 
   componentDidMount() {
     this.getVehicles()
-    this.verifyLocation()
   }
   // axios.get('https://swapi.co/api/vehicles/')
   // .then(result => {
@@ -41,20 +37,7 @@ class GridStarships extends Component {
   }
 
 
-  verifyLocation() {
-    for (let i = 0; i < this.state.Vehicles.length; i++) {
-      this.setState({
-        Cost: this.state.Vehicles[i].cost_in_credits
-      })
-      console.log(this.state.Cost)
-      for (let j = 0; j < this.state.Cost.length; j++) {
-        if (this.state.Cost[j] === 'unknown') {
-          this.setState({ InfosLoc: 'Vous ne pouvez pas louer ce véhicule' })
-        }
-      }
-    }
 
-  }
 
 
   render() {
@@ -69,7 +52,7 @@ class GridStarships extends Component {
                 <p>{data.model}</p>
                 <p>{data.vehicle_class}</p>
                 <p>{data.passengers}</p>
-                <p>{data.cost_in_credits}</p>
+                <p>{data.cost_in_credits !== 'unknown' ? data.cost_in_credits : 'Vous ne pouvez pas louer ce véhicule.'}</p>
                 <div>   
                   <button> Louer</button>
                   <button> Annuler</button>
@@ -80,7 +63,6 @@ class GridStarships extends Component {
 
           )
         })}
-        <p>{InfosLoc}</p>
 
       </div>
     )
