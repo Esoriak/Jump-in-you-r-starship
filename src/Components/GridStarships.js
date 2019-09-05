@@ -25,9 +25,6 @@ class GridStarships extends Component {
   }
 
 
-
-
-
   render() {
     const { Vehicles } = this.state
     return (
@@ -35,18 +32,26 @@ class GridStarships extends Component {
         {Vehicles.map(data => {
           return (
             <div className="card_ships">
-              <a><Link to="/moreinfos">
+              <Link to="/moreinfos">
                 <h2>{data.name}</h2>
                 <p>{data.model}</p>
                 <p>{data.vehicle_class}</p>
                 <p>{data.passengers}</p>
                 <p>{data.cost_in_credits !== 'unknown' ? data.cost_in_credits : 'Vous ne pouvez pas louer ce véhicule.'}</p>
-                <div>   
-                  <button> Louer</button>
-                  <button> Annuler</button>
-                </div>
-             
-              </Link></a>
+              </Link>
+              <div>
+
+                {data.cost_in_credits !== 'unknown' ?
+                  <div className="buttons-action">
+                    {/* <button className="button-add" onClick={this.handleAdd(data.name, data.cost_in_credits)} > Louer</button> */}
+                    <button className="button-add"> Louer</button>
+                    <button className="button-delete"> Annuler</button>
+                  </div>
+                  :
+                  null}
+
+              </div>
+
             </div>
 
           )

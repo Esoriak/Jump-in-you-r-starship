@@ -1,0 +1,11 @@
+.side-section {
+  /* background-color: rgb(208, 242, 217); */
+  width:20vw;
+}
+.command-section {
+  /* background-color: rgb(184, 224, 191); */
+  background-color: lightcyan;
+}
+.result-command {
+  border-left: 1px solid black;
+}
