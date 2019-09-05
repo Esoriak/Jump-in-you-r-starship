@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import {Link} from 'react-router-dom'
+import DisplayCard from './DisplayCard'
 import './GridStarships.css'
 
 
 class GridStarships extends Component {
   state = {
     Vehicles: [],
+    Order : [{
+      name: '',
+      cost:'',
+    }],
+    TotalPrice :'',
   }
 
   componentDidMount() {
@@ -25,41 +30,33 @@ class GridStarships extends Component {
   }
 
 
+  handleAdd = (key, price) => {
+    this.setState({
+      Order : {
+        name : key,
+        cost : price,
+      } 
+    })
+    console.log('ma commande', this.state.Panier)
+  }
+
   render() {
     const { Vehicles } = this.state
     return (
       <div className="grid">
-        {Vehicles.map(data => {
-          return (
-            <div className="card_ships">
-              <Link to="/moreinfos">
-                <h2>{data.name}</h2>
-                <p>{data.model}</p>
-                <p>{data.vehicle_class}</p>
-                <p>{data.passengers}</p>
-                <p>{data.cost_in_credits !== 'unknown' ? data.cost_in_credits : 'Vous ne pouvez pas louer ce véhicule.'}</p>
-              </Link>
-              <div>
-
-                {data.cost_in_credits !== 'unknown' ?
-                  <div className="buttons-action">
-                    {/* <button className="button-add" onClick={this.handleAdd(data.name, data.cost_in_credits)} > Louer</button> */}
-                    <button className="button-add"> Louer</button>
-                    <button className="button-delete"> Annuler</button>
-                  </div>
-                  :
-                  null}
-
-              </div>
-
-            </div>
-
-          )
-        })}
-
+        {Vehicles.map(data => { return (
+          <DisplayCard 
+            title={data.name}
+            model={data.model}
+            vehicle_class={data.vehicle_class}
+            passengers={data.passengers}
+            cost={data.cost_in_credits}
+            handleAdd={this.handleAdd}
+            />
+        )})})
       </div>
-    )
-  }
+  )
+ }
 }
 
 export default GridStarships
