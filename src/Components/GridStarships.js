@@ -51,7 +51,7 @@ class GridStarships extends Component {
             vehicle_class={data.vehicle_class}
             passengers={data.passengers}
             cost={data.cost_in_credits}
-            handleAdd={this.handleAdd}
+            handleAdd={this.handleAdd(data.name, data.cost_in_credits)}
             />
         )})})
       </div>

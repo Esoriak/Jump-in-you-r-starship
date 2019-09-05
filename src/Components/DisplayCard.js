@@ -19,7 +19,7 @@ const DisplayCard = ({title, model, vehicle_class, passengers, cost, handleAdd})
               { cost !== 'unknown' ?
                 <div className="buttons-action">
                   
-                  <button className="button-add" onClick={handleAdd(title, cost)}> Louer</button>
+                  <button className="button-add" onClick={handleAdd}> Louer</button>
                   <button className="button-delete"> Annuler</button>
                 </div>
                 :
