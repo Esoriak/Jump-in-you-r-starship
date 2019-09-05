@@ -5,7 +5,6 @@ class Panier extends Component {
   render() {
     return (
       <div>
-        <Header />
       </div>
     )
   }

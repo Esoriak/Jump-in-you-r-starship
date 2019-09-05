@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import './GridStarships.css'
-import CardStarships from '../Screen/CardStarships';
+
 
 class GridStarships extends Component {
   state = {
@@ -12,18 +12,6 @@ class GridStarships extends Component {
   componentDidMount() {
     this.getVehicles()
   }
-  // axios.get('https://swapi.co/api/vehicles/')
-  // .then(result => {
-  //   this.setState({
-  //     Vehicles: result.data.results,
-  //   })
-  //   // handle success
-  //   console.log('here', this.state.Cost);
-  // })
-  // .then(this.state.Vehicles.map(cost => {
-  //   this.setState({
-  //     Cost:cost.cost_in_credits
-
 
   getVehicles() {
     axios.get('https://swapi.co/api/vehicles/')
@@ -41,7 +29,7 @@ class GridStarships extends Component {
 
 
   render() {
-    const { Vehicles, InfosLoc } = this.state
+    const { Vehicles } = this.state
     return (
       <div className="grid">
         {Vehicles.map(data => {
