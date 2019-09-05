@@ -1,27 +1,23 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import Header from '../Components/Header';
+// import React from 'react'
+// import {Link} from 'react-router-dom'
+// import Header from '../Components/Header';
+// import GridStarships from '../Components/GridStarships';
+// import DisplayStarship from './DisplayStarship'
 
-const CardStarships = () => {
-  // const { Vehicles } = this.state
-  return (
-    <div>
-      <Header />
-       <Link to="/">RETOUR</Link>
-      {/* <div className="grid">
-        {Vehicles.map(data => {
-          return (
-            <div className="card_ships">
-              <h2>{data.name}</h2>
-              <p>{data.model}</p>
-              <p>{data.vehicle_class}</p>
-              <p>{data.passengers}</p>
-              <p>{data.cost_in_credits}</p>
-            </div>
-          )
-        })} */}
-      </div>
-  )
-}
 
-export default CardStarships
+// const CardStarships = ({result, handleAdd}) => {
+  
+//   const InfosVehicles = result.map((info) => <DisplayStarship 
+//     title={info.name}
+//     cost= {info.cost_in_credits}
+//     passengers={info.passengers}
+//     />
+//   )
+//   return (
+//   <div>
+//     {InfosVehicles}
+//   </div>
+//   )
+// }
+
+// export default CardStarships
