@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import GridStarships from '../Components/GridStarships'
-import Order from '../Components/Order';
 
 import './Home.css'
+import DisplayOrder from '../Components/DisplayOrder';
 class Home extends Component {
   render() {
     return (
       <div>
         <div className="screen-home">
         <GridStarships />
-        <Order />
+        <DisplayOrder />
         </div>
       </div>
     )

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import DisplayCard from './DisplayCard'
 import './GridStarships.css'
+import DisplayOrder from './DisplayOrder';
 
 
 class GridStarships extends Component {
@@ -25,17 +26,20 @@ class GridStarships extends Component {
       })
   }
 
-  onAdd = async(name) => {
-    await this.setState(state => {
-      const Order = state.Order.push(name);
-        console.log(this.state.Order)
-    })
- }
+ onAdd = async(name, price) => {
+  const orderObj = {name: name,
+  price: price}
+  
+      await this.setState(state => {
+        const Order = state.Order.push(orderObj);
+          console.log('ma commande:', this.state.Order)
+      })
+   }
 
- 
   render() {
-    const { Vehicles } = this.state
+    const { Vehicles, Order } = this.state
     return (
+      <>
       <div className="grid">
         {Vehicles.map(data => { return (
           <DisplayCard 
@@ -48,6 +52,20 @@ class GridStarships extends Component {
             />
         )})})
       </div>
+
+      <div className="order-section">
+        {Order.map(data => { return (
+          data.map(info => { return (
+            <DisplayOrder
+              dataName={info.name}
+              dataCost={info.cost}
+            />
+
+          )})
+           )})}
+
+      </div>
+      </>
   )
  }
 }

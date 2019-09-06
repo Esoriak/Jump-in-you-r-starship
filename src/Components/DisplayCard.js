@@ -4,18 +4,18 @@ import {Link} from 'react-router-dom'
 const DisplayCard = ({ title, model, vehicle_class, passengers, cost, handleAdd}) => {
 
  const handleClick = () => {
-   {handleAdd(title)}
+   {handleAdd(title, cost)}
  }
 
         return (
           <div className="card_ships" >
-            {/* <Link to="/moreinfos"> */}
+            <Link to="/moreinfos">
               <h2>{title}</h2>
               <p>{model}</p>
               <p>{vehicle_class}</p>
               <p>{passengers}</p>
               <p>{cost !== 'unknown' ? cost : 'Vous ne pouvez pas louer ce véhicule.'}</p>
-            {/* </Link> */}
+            </Link>
             <div>
 
               { cost !== 'unknown' ?
