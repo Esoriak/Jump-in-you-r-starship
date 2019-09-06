@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-import Header from '../Components/Header';
 import GridStarships from '../Components/GridStarships'
 
+import './Home.css'
+import DisplayOrder from '../Components/DisplayOrder';
 class Home extends Component {
   render() {
     return (
       <div>
+        <div className="screen-home">
         <GridStarships />
+        <DisplayOrder />
+        </div>
       </div>
     )
   }
