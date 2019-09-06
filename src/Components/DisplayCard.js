@@ -3,7 +3,9 @@ import {Link} from 'react-router-dom'
 
 const DisplayCard = ({ title, model, vehicle_class, passengers, cost, handleAdd}) => {
 
-
+ const handleClick = () => {
+   {handleAdd(title)}
+ }
 
         return (
           <div className="card_ships" >
@@ -19,7 +21,7 @@ const DisplayCard = ({ title, model, vehicle_class, passengers, cost, handleAdd}
               { cost !== 'unknown' ?
                 <div className="buttons-action">
                   
-                  <button className="button-add" onClick={handleAdd}> Louer</button>
+                  <button className="button-add" onClick={handleClick}> Louer</button>
                   <button className="button-delete"> Annuler</button>
                 </div>
                 :

@@ -8,11 +8,6 @@ class GridStarships extends Component {
   state = {
     Vehicles: [],
     Order : [],
-    // Order : [{
-    //   name: '',
-    //   cost:'',
-    // }],
-    // TotalPrice :'',
   }
 
   componentDidMount() {
@@ -30,25 +25,14 @@ class GridStarships extends Component {
       })
   }
 
-
-  // handleAdd = (key, price) => {
-  //   this.setState({
-  //     Order : {
-  //       name : key,
-  //       cost : price,
-  //     } 
-  //   })
-  //   console.log('ma commande', this.state.Panier)
-  // }
-
-
-  onAdd = () => {
-    this.setState({
-      Order : title
+  onAdd = async(name) => {
+    await this.setState(state => {
+      const Order = state.Order.push(name);
+        console.log(this.state.Order)
     })
-     console.log('et la', this.state.Order)
-  }
+ }
 
+ 
   render() {
     const { Vehicles } = this.state
     return (
@@ -61,7 +45,6 @@ class GridStarships extends Component {
             passengers={data.passengers}
             cost={data.cost_in_credits}
             handleAdd={this.onAdd}
-            // handleAdd={this.handleAdd}
             />
         )})})
       </div>
