@@ -1,0 +1,50 @@
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width:80vw;
+}
+
+.card_ships {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(208, 242, 217);
+  box-shadow: 1px 1px 1px black;
+  background-color: rgb(176, 184, 178);
+  margin-left: 5%;
+  margin-top:2%;
+  min-width:25%;
+  min-height:25%;
+}
+
+.card_ships a {
+  color: black;
+  text-decoration-line: none;
+}
+
+.buttons-action {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+.button-add {
+  width:5vw;
+  height: 3vh;
+  font-size: 1em;
+  border: 1px solid cadetblue;
+  border-radius: 5px;
+  background-color: lightcyan;
+  color: black;
+
+}
+
+.button-delete {
+  width:5vw;
+  height:3vh;
+  font-size: 1em;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: cadetblue;
+  color: white;
+}
