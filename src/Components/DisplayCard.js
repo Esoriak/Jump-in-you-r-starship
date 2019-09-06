@@ -1,12 +1,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const DisplayCard = ({title, model, vehicle_class, passengers, cost, handleAdd}) => {
+const DisplayCard = ({ title, model, vehicle_class, passengers, cost, handleAdd}) => {
 
 
 
         return (
-          <div className="card_ships">
+          <div className="card_ships" >
             {/* <Link to="/moreinfos"> */}
               <h2>{title}</h2>
               <p>{model}</p>

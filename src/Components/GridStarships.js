@@ -7,11 +7,12 @@ import './GridStarships.css'
 class GridStarships extends Component {
   state = {
     Vehicles: [],
-    Order : [{
-      name: '',
-      cost:'',
-    }],
-    TotalPrice :'',
+    Order : [],
+    // Order : [{
+    //   name: '',
+    //   cost:'',
+    // }],
+    // TotalPrice :'',
   }
 
   componentDidMount() {
@@ -30,14 +31,22 @@ class GridStarships extends Component {
   }
 
 
-  handleAdd = (key, price) => {
+  // handleAdd = (key, price) => {
+  //   this.setState({
+  //     Order : {
+  //       name : key,
+  //       cost : price,
+  //     } 
+  //   })
+  //   console.log('ma commande', this.state.Panier)
+  // }
+
+
+  onAdd = () => {
     this.setState({
-      Order : {
-        name : key,
-        cost : price,
-      } 
+      Order : title
     })
-    console.log('ma commande', this.state.Panier)
+     console.log('et la', this.state.Order)
   }
 
   render() {
@@ -51,7 +60,8 @@ class GridStarships extends Component {
             vehicle_class={data.vehicle_class}
             passengers={data.passengers}
             cost={data.cost_in_credits}
-            handleAdd={this.handleAdd(data.name, data.cost_in_credits)}
+            handleAdd={this.onAdd}
+            // handleAdd={this.handleAdd}
             />
         )})})
       </div>
